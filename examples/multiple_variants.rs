@@ -3,11 +3,8 @@ use egui_phosphor::{bold, fill, light, regular, thin};
 fn main() {
     eframe::run_native(
         "egui-phosphor demo",
-        eframe::NativeOptions {
-            initial_window_size: Some(egui::vec2(320.0, 755.0)),
-            ..Default::default()
-        },
-        Box::new(|cc| Box::new(Demo::new(cc))),
+        eframe::NativeOptions::default(),
+        Box::new(|cc| Ok(Box::new(Demo::new(cc)))),
     )
     .unwrap();
 }
